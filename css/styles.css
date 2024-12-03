@@ -1,0 +1,103 @@
+/* Map container */
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Body and HTML to prevent scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Disable scrolling on the entire page */
+}
+
+/* Search bar container */
+#searchContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  z-index: 1000;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar styling */
+#searchBar {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid blue;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Autocomplete dropdown */
+#autoComplete {
+  position: absolute;
+  background-color: white;
+  border-top: none;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.autocomplete-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  background-color: #eee;
+}
+
+/* Popup styling */
+.custom-popup .leaflet-popup-content-wrapper {
+  min-width: 300px;
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid blue; /* Border size reduced to 3px */
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.custom-popup .leaflet-popup-content {
+  font-size: 1.1rem;
+  padding: 0.75em;
+}
+
+.leaflet-popup-tip {
+  background: blue; /* Match the tip color with the border */
+}
+
+.popup-title {
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+/* Responsive design for medium and small screens */
+@media (max-width: 768px) {
+  #searchContainer {
+    top: unset;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80%;
+    padding: 8px;
+  }
+
+  #searchBar {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  #autoComplete {
+    max-height: 100px;
+  }
+}
